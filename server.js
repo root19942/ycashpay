@@ -13,7 +13,8 @@ const server = express()
 const io = socketIO(server);
 
 io.on('connection', (socket) => {
-
+	io.emit('paiment', new Date().toTimeString())
+	
 	socket.on('onLogin', (user) => {
       user.socket = socket.id; 
       users[socket.id] = user; 
