@@ -18,12 +18,10 @@ io.on('connection', (socket) => {
     socket.on('onLogin', (user) => {
       user.socket = socket.id; 
       users[socket.id] = user; 
-      io.sockets.emit('newuser',users)
+      io.sockets.emit('newuser',users);
     });
 
-    socket.on('onPaiement', (paiement) => {
-	io.emit('paiment', new Date().toTimeString())
-      )};
+
 
     socket.on('onRecivemessage', (paiement) => {
       for (var i = users.length - 1; i >= 0; i--) {
