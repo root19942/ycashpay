@@ -35,10 +35,9 @@ io.on('connection', (socket) => {
 
     });
 
-    socket.on('onPaiement', (paiement) => {
-	io.emit('paiment', new Date().toTimeString())
-    )};
 
+  socket.on('onPaiement', () => io.emit('paiment', new Date().toTimeString()) );
+	
   socket.on('disconnect', () => console.log('Client disconnected'));
   
 });
