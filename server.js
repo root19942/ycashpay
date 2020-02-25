@@ -15,10 +15,8 @@ const io = socketIO(server);
 io.on('connection', (socket) => {
     io.emit('login', new Date().toTimeString())
 	
-    socket.on('onLogin', (user) => {
-      user.socket = socket.id; 
-      users[socket.id] = user; 
-      io.sockets.emit('newuser',users);
+    socket.on('onLogin', (user) => { 
+      io.sockets.emit('paiment','user');
     });
   socket.on('onPaiement', (empty) => {
 	 io.emit('paiment', new Date().toTimeString()) 
