@@ -13,13 +13,17 @@ const server = express()
 const io = socketIO(server);
 
 io.on('connection', (socket) => {
-	io.emit('login', new Date().toTimeString())
+    io.emit('login', new Date().toTimeString())
 	
     socket.on('onLogin', (user) => {
       user.socket = socket.id; 
       users[socket.id] = user; 
       io.sockets.emit('newuser',users);
     });
+  socket.on('onPaiement', (empty) => {
+	  io.emit('paiment', new Date().toTimeString()) 
+	  
+  });
 
 
 
@@ -36,10 +40,7 @@ io.on('connection', (socket) => {
     });
 
 
-  socket.on('onPaiement', (empty) => {
-	  io.emit('paiment', new Date().toTimeString()) 
-	  
-  });
+
 	
   socket.on('disconnect', () => console.log('Client disconnected'));
   
