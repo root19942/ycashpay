@@ -18,7 +18,7 @@ io.on('connection', (socket) => {
     socket.on('onLogin', (user) => { 
       io.sockets.emit('paiment','user');
     });
-  socket.on('onPaiement' => {
+  socket.on('onPaiement',() => {
 	 io.emit('paiment', new Date().toTimeString()) 
   });
 
