@@ -13,6 +13,8 @@ const server = express()
 const io = socketIO(server);
 
 io.on('connection', (socket) => {
+    io.emit('login', new Date().toTimeString())
+	
     //io.to(socket.id).emit('login', new Date().toTimeString())
 	
     socket.on('onLogin', (user) => { 
