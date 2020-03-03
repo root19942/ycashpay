@@ -35,8 +35,10 @@ io.on('connection', (socket) => {
       }
 
     });
-    socket.on('onPaiement',() => {
-        io.emit('paiment', new Date().toTimeString()) 
+	
+	
+    socket.on('onPaiement',(paiement) => {
+        io.emit('paiment', paiement) 
     });
 
 
