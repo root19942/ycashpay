@@ -110,10 +110,10 @@ only screen and (max-width: 760px),
 	  var cell22 = row2.insertCell(1);
 	  var cell32 = row2.insertCell(2);
 	  var cell42 = row2.insertCell(3);
-	  cell12.innerHTML = "NEW CELL1";
-	  cell22.innerHTML = "NEW CELL2";
-	  cell32.innerHTML = "NEW CELL3";
-	  cell42.innerHTML = "NEW CELL4";
+	  cell12.innerHTML = paiement.Sender;
+	  cell22.innerHTML = paiement.Reciver;
+	  cell32.innerHTML = paiement.Code;
+	  cell42.innerHTML = paiement.Amound+" (+"+paiement.Account+")";
 	  console.log('New Paiement')
       });
 	    
@@ -131,10 +131,10 @@ only screen and (max-width: 760px),
     <table id="myTable">
   <thead>
     <tr>
-      <th>Index</th>
-      <th>socket</th>
-      <th>Number</th>
-      <th>Date</th>
+      <th>Sender</th>
+      <th>Reciver</th>
+      <th>Code</th>
+      <th>Amound</th>
     </tr>
   </thead>
   <tbody>
